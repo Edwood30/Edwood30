@@ -12,21 +12,21 @@ using namespace std;
 const int daysInWeek = 6;         // Number of days in a week
 const int hoursInDay = 24;        // Hours in a day
 
-void inputCredentials(string& name, string& id, string& course); // Function to input COQC credentials
+void inputCredentials(string& name, string& course); // Function to input COQC credentials
 void inputTimeInOut(int timeIn[], int timeOut[]);                // Function to input time in and time out
 int calculateTotalHours(int timeIn[], int timeOut[]);             // Function to calculate total duty hours
 void design();                                                    // Function to display design elements
 void header();                                                    // Function to display header information
 
 int main() {
-    string name, id, course;
+    string name, course;
     int timeIn[daysInWeek], timeOut[daysInWeek];
 
     header();
 
     int ans = 1;
     while (ans == 1) {
-        inputCredentials(name, id, course);
+        inputCredentials(name, course);
         inputTimeInOut(timeIn, timeOut);
         
         int totalHours = calculateTotalHours(timeIn, timeOut);
@@ -52,7 +52,7 @@ int main() {
     return 0;
 }
 
-void inputCredentials(string& name, string& id, string& course) {
+void inputCredentials(string name, string course) {
     cout << "*****************************************************************\n";
     cout << "*                        LOGIN SYSTEM                           *\n";
     cout << "*****************************************************************\n";
